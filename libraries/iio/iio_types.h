@@ -52,6 +52,49 @@
 /******************************************************************************/
 
 /**
+ * @struct iio_chan_type
+ * @brief IIO channel types
+ */
+enum iio_chan_type {
+	IIO_VOLTAGE,
+	IIO_CURRENT,
+	IIO_POWER,
+	IIO_ACCEL,
+	IIO_ANGL_VEL,
+	IIO_MAGN,
+	IIO_LIGHT,
+	IIO_INTENSITY,
+	IIO_PROXIMITY,
+	IIO_TEMP,
+	IIO_INCLI,
+	IIO_ROT,
+	IIO_ANGL,
+	IIO_TIMESTAMP,
+	IIO_CAPACITANCE,
+	IIO_ALTVOLTAGE,
+	IIO_CCT,
+	IIO_PRESSURE,
+	IIO_HUMIDITYRELATIVE,
+	IIO_ACTIVITY,
+	IIO_STEPS,
+	IIO_ENERGY,
+	IIO_DISTANCE,
+	IIO_VELOCITY,
+	IIO_CONCENTRATION,
+	IIO_RESISTANCE,
+	IIO_PH,
+	IIO_UVINDEX,
+	IIO_ELECTRICALCONDUCTIVITY,
+	IIO_COUNT,
+	IIO_INDEX,
+	IIO_GRAVITY,
+	IIO_POSITIONRELATIVE,
+	IIO_PHASE,
+	IIO_GENERIC_DATA,
+	IIO_FLAGS,
+};
+
+/**
  * @struct iio_ch_info
  * @brief Structure holding channel attributess.
  */
@@ -84,6 +127,8 @@ struct iio_attribute {
 struct iio_channel {
 	/** channel name */
 	char *name;
+	/** Chanel type */
+	enum iio_chan_type ch_type;
 	/** list of attributes */
 	struct iio_attribute **attributes;
 	/** if true, the channel is an output channel */
